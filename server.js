@@ -6,10 +6,11 @@ const http = require('http').Server(app);
 
 const bodyParser = require('body-parser');
 const cors = require('cors');
+const config = require('./config');
 
 app.use(cors({ credentials: true, origin: 'http://localhost:3000' }));
 
-const PORT = process.env.npm_package_config_port || '3233';
+const PORT = config.port || '3233';
 
 const socketIO = require('socket.io');
 
